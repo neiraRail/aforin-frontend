@@ -1,5 +1,5 @@
 <template>
-<v-sheet :color='color_fondo'>
+<v-sheet :color='color_fondo' height="100%">
   <div class="hello" id=12 >
     <img id='logo' alt="aforin logo" src="../assets/logo.png" height='100'>
     <h1>Aforín</h1>
