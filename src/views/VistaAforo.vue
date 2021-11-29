@@ -3,7 +3,7 @@
     <v-container fluid>
       <v-row>
         <v-col>
-          <img id='logo' alt="aforin logo" src="../assets/logo.png" height='100'>
+          <img id='logo' alt="aforin logo" src="../assets/logo_aforin.png" height='100'>
           <h1>Aforín</h1>
         </v-col>
       </v-row>
