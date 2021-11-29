@@ -1,20 +1,11 @@
 import ApiService from "@/services/api.service";
 const url = "local";
 export const service = {
-    getAll() {
-        return ApiService.get(url, { id: "" });
+    getMax(id) {
+        return ApiService.get(url+'/maximo', {slug:id});
     },
-    get(id) {
-        return ApiService.get(url, { slug: id });
-    },
-    create(params) {
-        return ApiService.post(url, { params: params });
-    },
-    update( params) {
-        return ApiService.update(url, { params: params });
-    },
-    destroy(id) {
-        return ApiService.delete(url, { id: id });
-    },
+    getActual(id) {
+        return ApiService.get(url+'/actual', { slug: id });
+    }
 };
 export default service;

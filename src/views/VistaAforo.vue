@@ -12,20 +12,30 @@
 
 
 <script>
+import localService from "@/services/local.service"
 export default {
   name: 'HelloWorld',
   data(){
     return {
-      max: 12,
-      actual: 5
+      max: 0,
+      actual: 0,
     }
   },
   methods:{
+    fetchAforo(id){
+      localService.getActual(id).then(response =>(this.actual = response.data));
+      localService.getMax(id).then(response =>(this.max = response.data));
+    }
+
+  },
+  mounted(){
+    this.fetchAforo(1);
+
   },
   computed:{
     mensaje(){
       if(this.max==this.actual){
-        return 'Aforo completo, espere';
+        return 'El Aforo completo, espere';
       }else{
         return 'Pase, recuerde aplicarse alcohol gel';
       }
