@@ -34,11 +34,13 @@ export default {
     }
   },
   methods:{
-    fetchAforo(id){
+    fetchAforo(id){ 
       localService.getActual(id).then(response =>(this.actual = response.data));
       localService.getMax(id).then(response =>(this.max = response.data));
     }
-
+  },
+  created() {
+    this.interval = setInterval(() => this.fetchAforo(1), 1000);
   },
   mounted(){
     this.fetchAforo(1);
