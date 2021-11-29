@@ -1,12 +1,24 @@
 <template>
-<v-sheet :color='color_fondo' height="100%">
-  <div class="hello" id=12 >
-    <img id='logo' alt="aforin logo" src="../assets/logo.png" height='100'>
-    <h1>Aforín</h1>
-     <h2>Aforo</h2>
-     <h1>{{actual}}/{{max}}</h1>
-     <p id='p1'>{{mensaje}}</p>
-  </div>
+<v-sheet :color='color_fondo' height="100%" rounded="xl">
+    <v-container fluid>
+      <v-row>
+        <v-col>
+          <img id='logo' alt="aforin logo" src="../assets/logo.png" height='100'>
+          <h1>Aforín</h1>
+        </v-col>
+      </v-row>
+      <v-row >
+        <v-col align="center">
+          <h2>Aforo</h2>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col align="center"><h1>{{actual}}/{{max}}</h1></v-col>
+      </v-row>
+      <v-row >
+        <v-col align="center"><p id='p1'>{{mensaje}}</p></v-col>
+      </v-row>
+    </v-container>
 </v-sheet>
 </template>
 
