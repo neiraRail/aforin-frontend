@@ -40,8 +40,9 @@ export default {
       localService.getActual(id)
         .then(response =>(this.actual = response.data))
         .catch(error => {
-          console.log("se detendrá el intervalo hasta nuevo aviso")
+          console.log(error)
           clearInterval(this.interval)
+          this.$router.push("/nolocal")
         })
       localService.getMax(id).then(response =>(this.max = response.data));
     }
