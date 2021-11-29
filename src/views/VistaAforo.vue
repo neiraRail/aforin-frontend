@@ -31,21 +31,25 @@ export default {
     return {
       max: 0,
       actual: 0,
+      local: 1,
+      interval: ''
     }
   },
   methods:{
     fetchAforo(id){ 
-      localService.getActual(id).then(response =>(this.actual = response.data));
+      localService.getActual(id)
+        .then(response =>(this.actual = response.data))
+        .catch(error => {
+          console.log("se detendrá el intervalo hasta nuevo aviso")
+          clearInterval(this.interval)
+        })
       localService.getMax(id).then(response =>(this.max = response.data));
     }
   },
-  created() {
-    this.interval = setInterval(() => this.fetchAforo(1), 1000);
-  },
   mounted(){
-    this.fetchAforo(1);
-
+    this.interval = setInterval(() => this.fetchAforo(this.local), 1000);
   },
+
   computed:{
     mensaje(){
       if(this.max==this.actual){
