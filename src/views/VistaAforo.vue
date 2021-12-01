@@ -104,6 +104,7 @@ a {
 }
 h1 {
   font-size: 80px !important;
+  font-family: 'Poppins', sans-serif !important;
 
 }
 h2 {
