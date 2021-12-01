@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     local: {
       localId: '',
-      localNombre: '',
+      localNombre: 'Chamañiño',
       aforoMaximo: '',
     }
   },

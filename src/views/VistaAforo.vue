@@ -3,7 +3,6 @@
     <v-container fluid>
       <v-row>
         <v-col>
-          
         </v-col>
       </v-row>
       <v-row >
@@ -41,6 +40,7 @@ export default {
     }
   },
   methods:{
+    //Respuesta asincrona deberia ignorarse, si ya se detectó la primera
     fetchAforo(id){ 
       localService.getActual(id)
         .then(response =>(this.actual = response.data))
@@ -56,23 +56,25 @@ export default {
     this.interval = setInterval(() => this.fetchAforo(this.local), 1000);
   },
 
+  
+
   computed:{
     mensaje(){
-      if(this.max==this.actual){
+      if(this.max<=this.actual){
         return 'El Aforo completo, espere';
       }else{
         return 'Pase, recuerde aplicarse alcohol gel';
       }
     },
     color_fondo(){
-      if(this.max==this.actual){
+      if(this.max<=this.actual){
         return'#cc5454';
       }else{
         return '#518c35';
       }
     },
     color_caja(){
-      if(this.max==this.actual){
+      if(this.max<=this.actual){
         return'#ff8a8a';
       }else{
         return '#b4d4a5';
