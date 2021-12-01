@@ -13,7 +13,7 @@
       </v-row>
       <v-row>
           <v-col align="center"> 
-            <v-sheet :color= "color_caja" rounded="rounded"  width="60%"  align="center" >
+            <v-sheet :color= "color_caja" rounded="rounded"  width="300"  align="center" >
               <h1>{{actual}}/{{max}}</h1>
             </v-sheet>
           </v-col>
