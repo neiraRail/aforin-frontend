@@ -1,10 +1,9 @@
 <template>
-<v-sheet :color='color_fondo' height="100%" rounded="xl">
+<v-sheet :color='color_fondo' height="100%" >
     <v-container fluid>
       <v-row>
         <v-col>
-          <img id='logo' alt="aforin logo" src="../assets/logo_aforin.png" height='100'>
-          <h1>Aforín</h1>
+          
         </v-col>
       </v-row>
       <v-row >
@@ -13,10 +12,16 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col align="center"><h1>{{actual}}/{{max}}</h1></v-col>
+          <v-col align="center"> 
+            <v-sheet :color= "color_caja" rounded="rounded"  width="60%"  align="center" >
+              <h1>{{actual}}/{{max}}</h1>
+            </v-sheet>
+          </v-col>
       </v-row>
+      
+      
       <v-row >
-        <v-col align="center"><p id='p1'>{{mensaje}}</p></v-col>
+        <v-col align="center"><h3 id='p1'>{{mensaje}}</h3></v-col>
       </v-row>
     </v-container>
 </v-sheet>
@@ -61,10 +66,18 @@ export default {
     },
     color_fondo(){
       if(this.max==this.actual){
-        return'red';
+        return'#cc5454';
       }else{
-        return 'green';
+        return '#518c35';
       }
+    },
+    color_caja(){
+      if(this.max==this.actual){
+        return'#ff8a8a';
+      }else{
+        return '#b4d4a5';
+      }
+
     }
   }
 }
@@ -74,6 +87,7 @@ export default {
 <style scoped>
 h3 {
   margin: 40px 0 0;
+  font-size: 20px !important;
 }
 ul {
   list-style-type: none;
@@ -85,5 +99,13 @@ li {
 }
 a {
   color: #98b3a6;
+}
+h1 {
+  font-size: 80px !important;
+
+}
+h2 {
+  font-size: 40px !important;
+
 }
 </style>
