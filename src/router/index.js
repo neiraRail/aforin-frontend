@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import VistaAforo from "../views/VistaAforo.vue"
 import NoLocal from "../views/errores/NoLocal.vue"
+import Login from "../views/Login.vue"
 
 Vue.use(VueRouter);
 
@@ -15,7 +16,12 @@ const routes = [
     path: "/nolocal",
     name: "NoLocal",
     component: NoLocal,
-  }
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
+  },
 ];
 
 const router = new VueRouter({

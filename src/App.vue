@@ -27,8 +27,8 @@ export default {
     //
   }),
   computed:{
-    // Llama a variable "local" del store global
-    ...mapState(["local"])
-  }
+    // Trae a variable "local" y logged del store global
+    ...mapState(["local"]),
+  },
 };
 </script>

@@ -28,6 +28,7 @@
 
 
 <script>
+import {mapState} from 'vuex'
 import localService from "@/services/local.service"
 export default {
   name: 'HelloWorld',
@@ -53,11 +54,15 @@ export default {
     }
   },
   mounted(){
-    this.interval = setInterval(() => this.fetchAforo(this.local), 1000);
+    console.log(this.logged)
+    if(!this.logged){
+      this.$router.push("/login")
+    }else{ 
+      this.interval = setInterval(() => this.fetchAforo(this.local), 1000);
+    }
+    
+    
   },
-
-  
-
   computed:{
     mensaje(){
       if(this.max<=this.actual){
@@ -80,7 +85,8 @@ export default {
         return '#b4d4a5';
       }
 
-    }
+    },
+    ...mapState("auth",["logged"])
   }
 }
 </script>
