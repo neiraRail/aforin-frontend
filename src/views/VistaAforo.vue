@@ -69,7 +69,7 @@ export default {
         return 'El Aforo completo, espere';
       }else{ 
         if(this.actual>=this.max*0.6 ){return 'pase con cuidaito';} 
-        else{ return 'Pase, recuerde aplicarse alcohol gel eh';}
+        else{ return 'Pase, recuerde aplicarse alcohol gel';}
       }
     },
     color_fondo(){
