@@ -67,22 +67,27 @@ export default {
     mensaje(){
       if(this.max<=this.actual){
         return 'El Aforo completo, espere';
-      }else{
-        return 'Pase, recuerde aplicarse alcohol gel';
+      }else{ 
+        if(this.actual>=this.max*0.6 ){return 'pase con cuidaito';} 
+        else{ return 'Pase, recuerde aplicarse alcohol gel eh';}
       }
     },
     color_fondo(){
+     
       if(this.max<=this.actual){
-        return'#cc5454';
-      }else{
-        return '#518c35';
+        return'#cc5454';;
+      }else{ 
+        if(this.actual>=this.max*0.6 ){return '#e6bf32';} 
+        else{ return '#518c35';}
       }
     },
     color_caja(){
+       
       if(this.max<=this.actual){
-        return'#ff8a8a';
-      }else{
-        return '#b4d4a5';
+        return '#ff8a8a';
+      }else{ 
+        if(this.actual>=this.max*0.8 ){return '#fce388';} 
+        else{ return '#b4d4a5';}
       }
 
     },
