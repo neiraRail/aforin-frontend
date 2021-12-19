@@ -8,7 +8,7 @@
             </p>
         </div>
         <v-col align="center">
-            <v-btn @click="$router.push('/')">Ir a Config</v-btn>
+            <v-btn @click="$router.push('/configuracion')">Ir a Config</v-btn>
             <v-btn @click="$router.push('/')">Intentar denuevo</v-btn>
         </v-col>
         

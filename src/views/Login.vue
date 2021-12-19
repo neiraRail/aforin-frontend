@@ -56,11 +56,12 @@ export default {
                 //Indicar globalmente que estamos logeados
                 this.$store.commit("auth/setLogged", true)
                 //Mandarnos a dashboard
-                this.$router.push('/')
+                this.$router.push('/home')
             }
         },
         validar(){
             //Falta implementación
+            //Metrica añcanzada
             return true
         }
     }
